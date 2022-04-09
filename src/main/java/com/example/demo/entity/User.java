@@ -19,4 +19,7 @@ public class User {
 
     @Column(name = "clave")
     private String password;
+
+    @Column(name = "perfil")
+    private String perfil;
 }
