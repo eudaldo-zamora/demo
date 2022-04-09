@@ -19,4 +19,5 @@ public class User {
 
     @Column(name = "clave")
     private String password;
+
 }
