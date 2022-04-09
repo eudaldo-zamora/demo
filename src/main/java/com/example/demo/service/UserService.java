@@ -9,4 +9,6 @@ public interface UserService {
     User findUserByUsername(String username);
     Boolean login(String username, String password);
     void delete(Integer id);
+    void deleteByName(String name);
 }
+
