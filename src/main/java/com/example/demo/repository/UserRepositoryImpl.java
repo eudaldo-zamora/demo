@@ -43,7 +43,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
     }*/
 
     @Override
-    public Boolean login(String username, String password) {
+    public Boolean login(String username, String password, String email) {
         try {
             CriteriaBuilder criteria = entityManager.getCriteriaBuilder();
 
@@ -53,11 +53,13 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
 
             Path<String> usernamePath = user.get("username");
             Path<String> passwordPath = user.get("password");
+            Path<String> emailPath = user.get("email");
 
             List<Predicate> predicates = new ArrayList<>();
 
             predicates.add(criteria.equal(usernamePath, username));
             predicates.add(criteria.equal(passwordPath, password));
+            predicates.add(criteria.equal(emailPath, email));
 
             query.select(user).where(criteria.and(predicates.toArray(new Predicate[0])));
             return entityManager.createQuery(query).getSingleResult() != null;

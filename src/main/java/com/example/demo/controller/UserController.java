@@ -41,7 +41,7 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public Boolean login(@RequestParam String username, @RequestParam String password) {
+    public Boolean login(@RequestParam String username, @RequestParam String password, @RequestParam String email) {
         return userService.login(username, password);
     }
 
