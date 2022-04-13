@@ -6,6 +6,9 @@ import java.util.Random;
 
 @SpringBootTest
 class DemoApplicationTests {
+    @Test
+        void probando() {
+    }
     public static int NumRandom() {
         int min = 1;
         int max = 10;
